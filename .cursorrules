@@ -1,0 +1,20 @@
+# Godot 4 Mobile Development Rules
+
+## Language & Version
+- Use **GDScript** for all game logic unless C# is specifically requested.
+- Target **Godot 4.x** syntax. (e.g., use `@onready` instead of `onready`, `Input.is_action_just_pressed` instead of older versions).
+- Use **PascalCase** for class names and **snake_case** for variables and functions.
+
+## Mobile Optimization
+- Always suggest **TouchScreenButton** or `_input(event)` handling for `InputEventScreenTouch` rather than just keyboard inputs.
+- Prefer **VBoxContainer** and **HBoxContainer** for UI to ensure responsiveness across different screen aspect ratios.
+- Keep draw calls low; suggest using **ParticlesProcessMaterial** for effects.
+
+## Project Structure
+- Suggest a modular scene-based structure. 
+- Keep scripts attached to their relevant nodes.
+- Use `class_name` to make scripts globally accessible to the AI's "awareness."
+
+## AI Workflow
+- When writing a new script, always include a brief comment at the top explaining the node type it should be attached to.
+- If a bug involves physics, suggest checking the **Collision Layers** and **Masks**.
