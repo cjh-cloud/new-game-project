@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0breakplat"]
+
+[ext_resource type="Script" path="res://scripts/breakable_platform.gd" id="1_break"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_break"]
+size = Vector2(60, 12)
+
+[node name="BreakablePlatform" type="StaticBody2D"]
+script = ExtResource("1_break")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_break")
+one_way_collision = true

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0normalplat"]
+
+[ext_resource type="Script" path="res://scripts/normal_platform.gd" id="1_normal"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_normal"]
+size = Vector2(60, 12)
+
+[node name="NormalPlatform" type="StaticBody2D"]
+script = ExtResource("1_normal")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_normal")
+one_way_collision = true
