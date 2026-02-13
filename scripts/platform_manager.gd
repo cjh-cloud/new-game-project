@@ -60,8 +60,8 @@ func generate_initial_platforms(start_y: float) -> void:
 ## `difficulty` is a 0..1+ value that increases platform variety and spacing.
 func generate_platforms(camera_top_y: float, difficulty: float) -> void:
 	# Scale spacing with difficulty
-	var current_max_spacing := min(max_spacing + difficulty * 60.0, MAX_SPACING_CAP)
-	var current_min_spacing := min(min_spacing + difficulty * 20.0, current_max_spacing - 20.0)
+	var current_max_spacing: float = min(max_spacing + difficulty * 60.0, MAX_SPACING_CAP)
+	var current_min_spacing: float = min(min_spacing + difficulty * 20.0, current_max_spacing - 20.0)
 
 	while highest_platform_y > camera_top_y - GENERATION_BUFFER:
 		var spacing := randf_range(current_min_spacing, current_max_spacing)

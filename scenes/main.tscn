@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://c0mainscene"]
 
-[ext_resource type="Script" path="res://scripts/main.gd" id="1_main"]
+[ext_resource type="Script" uid="uid://cnssi418c0t2l" path="res://scripts/main.gd" id="1_main"]
 [ext_resource type="PackedScene" uid="uid://c0player" path="res://scenes/player.tscn" id="2_player"]
-[ext_resource type="Script" path="res://scripts/platform_manager.gd" id="3_platmgr"]
-[ext_resource type="Script" path="res://scripts/hud.gd" id="4_hud"]
-[ext_resource type="Script" path="res://scripts/start_screen.gd" id="5_start"]
-[ext_resource type="Script" path="res://scripts/game_over_screen.gd" id="6_gameover"]
+[ext_resource type="Script" uid="uid://dhx0q3ylntvfx" path="res://scripts/platform_manager.gd" id="3_platmgr"]
+[ext_resource type="Script" uid="uid://c1sdhwhew0msb" path="res://scripts/hud.gd" id="4_hud"]
+[ext_resource type="Script" uid="uid://b2grdcqmpcjed" path="res://scripts/start_screen.gd" id="5_start"]
+[ext_resource type="Script" uid="uid://dkgl2lkm4l1ht" path="res://scripts/game_over_screen.gd" id="6_gameover"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_main")
@@ -55,24 +55,24 @@ text = "Doodle Jump"
 horizontal_alignment = 1
 
 [node name="Spacer1" type="Control" parent="HUD/StartScreen"]
-layout_mode = 2
 custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
 
 [node name="TapLabel" type="Label" parent="HUD/StartScreen"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 22
 theme_override_colors/font_color = Color(0.4, 0.4, 0.4, 1)
+theme_override_font_sizes/font_size = 22
 text = "Tap anywhere to start"
 horizontal_alignment = 1
 
 [node name="Spacer2" type="Control" parent="HUD/StartScreen"]
-layout_mode = 2
 custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
 
 [node name="HighScoreLabel" type="Label" parent="HUD/StartScreen"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 20
 theme_override_colors/font_color = Color(0.5, 0.5, 0.5, 1)
+theme_override_font_sizes/font_size = 20
 text = "Best: 0"
 horizontal_alignment = 1
 
@@ -88,14 +88,14 @@ script = ExtResource("6_gameover")
 
 [node name="GameOverLabel" type="Label" parent="HUD/GameOverScreen"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 42
 theme_override_colors/font_color = Color(0.8, 0.15, 0.15, 1)
+theme_override_font_sizes/font_size = 42
 text = "Game Over"
 horizontal_alignment = 1
 
 [node name="Spacer1" type="Control" parent="HUD/GameOverScreen"]
-layout_mode = 2
 custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
 
 [node name="FinalScoreLabel" type="Label" parent="HUD/GameOverScreen"]
 layout_mode = 2
@@ -105,18 +105,18 @@ horizontal_alignment = 1
 
 [node name="BestScoreLabel" type="Label" parent="HUD/GameOverScreen"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 22
 theme_override_colors/font_color = Color(0.5, 0.5, 0.5, 1)
+theme_override_font_sizes/font_size = 22
 text = "Best: 0"
 horizontal_alignment = 1
 
 [node name="Spacer2" type="Control" parent="HUD/GameOverScreen"]
-layout_mode = 2
 custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
 
 [node name="RestartButton" type="Button" parent="HUD/GameOverScreen"]
-layout_mode = 2
 custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 24
 text = "Play Again"

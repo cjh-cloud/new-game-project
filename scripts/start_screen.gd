@@ -10,8 +10,14 @@ func _notification(what: int) -> void:
 		_update_high_score()
 
 func _update_high_score() -> void:
-	if not is_inside_tree():
+	# 1. Check if the node is in the tree AND if the label is actually ready
+	if not is_inside_tree() or not is_node_ready():
 		return
+	
+	# 2. Safety check for the label specifically
+	if high_score_label == null:
+		return
+
 	var main_node := get_node_or_null("/root/Main")
 	if main_node and main_node is Main:
 		high_score_label.text = "Best: %d" % main_node.high_score
