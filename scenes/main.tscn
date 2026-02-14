@@ -58,23 +58,27 @@ horizontal_alignment = 1
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 
-[node name="TapLabel" type="Label" parent="HUD/StartScreen"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.4, 0.4, 0.4, 1)
-theme_override_font_sizes/font_size = 22
-text = "Tap anywhere to start"
-horizontal_alignment = 1
-
 [node name="Spacer2" type="Control" parent="HUD/StartScreen"]
-custom_minimum_size = Vector2(0, 20)
+custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 
 [node name="HighScoreLabel" type="Label" parent="HUD/StartScreen"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.5, 0.5, 0.5, 1)
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 24
 text = "Best: 0"
 horizontal_alignment = 1
+
+[node name="Spacer3" type="Control" parent="HUD/StartScreen"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+
+[node name="StartButton" type="Button" parent="HUD/StartScreen"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 24
+text = "Start Game"
 
 [node name="GameOverScreen" type="VBoxContainer" parent="HUD"]
 visible = false

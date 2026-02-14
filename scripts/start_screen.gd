@@ -1,9 +1,13 @@
 # Attach to: VBoxContainer (StartScreen inside CanvasLayer in main.tscn)
-# Shows the title, high score, and a tap-to-start prompt.
+# Shows the title, high score, and a Start Game button.
 class_name StartScreen
 extends VBoxContainer
 
 @onready var high_score_label: Label = $HighScoreLabel
+@onready var start_button: Button = $StartButton
+
+func _ready() -> void:
+	start_button.pressed.connect(_on_start_pressed)
 
 func _notification(what: int) -> void:
 	if what == NOTIFICATION_VISIBILITY_CHANGED and visible:
@@ -27,13 +31,14 @@ func _update_high_score() -> void:
 func _input(event: InputEvent) -> void:
 	if not visible:
 		return
-	# Start on any touch or key press
+	# Support tap/click anywhere as an alternative to button press (accessibility)
 	if event is InputEventScreenTouch and event.pressed:
-		_start()
-	elif event is InputEventKey and event.pressed:
 		_start()
 	elif event is InputEventMouseButton and event.pressed:
 		_start()
+
+func _on_start_pressed() -> void:
+	_start()
 
 func _start() -> void:
 	var main_node := get_node_or_null("/root/Main")
